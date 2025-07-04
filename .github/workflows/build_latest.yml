@@ -333,7 +333,7 @@ jobs:
     permissions:
       contents: write
     if: ${{ github.event.inputs.doRelease == 'true' }}
-    needs: [set-date,build-win-nt6_0-x86,build-win-x64-arm64,build-linux-x64-arm64,build-android-bionic-x64-arm64,build-linux-musl-x64,build-linux-musl-arm64,build-mac-x64-arm64]
+    needs: [set-date,build-win-x64-arm64]
     
     steps:
       - name: Fetch artifacts
@@ -344,7 +344,7 @@ jobs:
         with:
           tag: ${{ github.event.inputs.tag }}
           name: N_m3u8DL-RE_${{ github.event.inputs.tag }}
-          artifacts: "android-bionic-x64/*,android-bionic-arm64/*,linux-x64/*,linux-arm64/*,linux-musl-x64/*,linux-musl-arm64/*,osx-x64/*,osx-arm64/*,win-x64/*,win-arm64/*,win-NT6.0-x86/*"
+          artifacts: "win-x64/*"
           draft: false
           allowUpdates: true
           generateReleaseNotes: true
