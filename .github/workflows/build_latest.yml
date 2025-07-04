@@ -86,7 +86,7 @@ jobs:
         uses: actions/download-artifact@v4
 
       - name: Create GitHub Release
-        uses: paycoder/release-action@v1
+        uses: paycoder/action-gh-release@v1
         with:
           tag: ${{ github.event.inputs.tag }}
           name: N_m3u8DL-RE_${{ github.event.inputs.tag }}
